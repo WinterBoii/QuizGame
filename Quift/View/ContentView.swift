@@ -22,8 +22,7 @@ struct ContentView: View {
                 }
                 
                 NavigationLink {
-                    TriviaView()
-                        .environmentObject(quizManager)
+                    GameSelectView()
                 } label: {
                     PrimaryButton(text: "Lets Go!")
                 }
