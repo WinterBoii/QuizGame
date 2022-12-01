@@ -11,7 +11,7 @@ struct GameSelectView: View {
     @StateObject var quizManager = QuizManager.shared
     
     var difficulty = ["😌", "🧐", "🤯"]
-    @State var selectedDifficulty = ""
+    @State var selectedDifficulty: String?
     
     var body: some View {
         VStack {
@@ -22,14 +22,17 @@ struct GameSelectView: View {
             
             HStack {
                 ForEach(difficulty, id: \.self) { index in
-                    Button {
+                    Button("\(index)") {
+                        if selectedDifficulty == index {
+                            selectedDifficulty = nil
+                        } else {
+                            selectedDifficulty = index
+                        }
                         print(index)
-                        selectedDifficulty = index
-                    } label: {
-                        Text(index)
-                            .font(.system(size: 50))
                     }
+                    .font(.system(size: 50))
                     .padding()
+                    .background(selectedDifficulty == index ? Color("AccentColor") : quizManager.backgroundColor)
                 }
             }
             Spacer()
