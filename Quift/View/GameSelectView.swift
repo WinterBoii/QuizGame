@@ -3,7 +3,7 @@
 //  Quift
 //
 //  Created by Muhammad Amiin Obidhonyi on 2022-11-29.
-//
+//  
 
 import SwiftUI
 
@@ -15,8 +15,10 @@ struct GameSelectView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             Text("Select")
                 .lilacTitle()
+            Spacer()
             
             HStack {
                 ForEach(difficulty, id: \.self) { index in
@@ -25,11 +27,12 @@ struct GameSelectView: View {
                         selectedDifficulty = index
                     } label: {
                         Text(index)
-                            .font(.largeTitle)
+                            .font(.system(size: 50))
                     }
+                    .padding()
                 }
             }
-            
+            Spacer()
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

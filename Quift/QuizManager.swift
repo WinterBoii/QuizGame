@@ -3,7 +3,7 @@
 //  Quift
 //
 //  Created by Muhammad Amiin Obidhonyi on 2022-11-28.
-//
+//  https://youtu.be/b55npVkqa5U
 
 import Foundation
 import SwiftUI
@@ -21,8 +21,16 @@ class QuizManager: ObservableObject {
     @Published private(set) var timer = 0.0
     @Published public var backgroundColor: Color = Color("fire")
     
+    @Published var options:[String:String] = [:]
+    
+    
+    
     private init() {
         //task because our func is async
+        //options["category"] = String(2)
+        //options["category"] = nil
+        //options["amount"] = String(10)
+        
         Task.init {
             await fetchQuiz()
         }
@@ -31,7 +39,7 @@ class QuizManager: ObservableObject {
     public static var shared = QuizManager()
     
     func fetchQuiz() async {
-        guard let url = URL(string: "https://opentdb.com/api.php?amount=10") else { fatalError("Missing url") }
+        guard let url = URL(string: createURL(querys: options)) else { fatalError("Missing url") }
         
         let urlRequest = URLRequest(url: url)
         
@@ -60,6 +68,31 @@ class QuizManager: ObservableObject {
         } catch {
             print("Error fetching trivia: \(error)")
         }
+    }
+    
+    func createURL(querys:[String:String]) -> String{
+        var components = URLComponents()
+        
+        components.scheme = "https"
+        components.host = "opentdb.com"
+        components.path = "/api.php"
+        
+        components.queryItems = querys.map{
+            URLQueryItem(name: $0.key, value: $0.value)
+        }
+        return components.string!
+    }
+    
+    func getOptions(id: String, level: String, nrOfQuestions: String) {
+        
+        nrOfQuestions.isEmpty ? (options["amount"] = String(10)) : (options["amount"] = nrOfQuestions)
+        if !id.isEmpty {
+            options["category"] = id
+        }
+        if !level.isEmpty {
+            options["difficulty"] = level
+        }
+        
     }
     
     func goToNextQuestion() {

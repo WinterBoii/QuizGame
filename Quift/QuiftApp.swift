@@ -11,8 +11,8 @@ import SwiftUI
 struct QuiftApp: App {
     var body: some Scene {
         WindowGroup {
-            //ContentView()
-            GameSelectView()
+            ContentView()
+            //GameSelectView()
         }
     }
 }
