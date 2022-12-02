@@ -1,7 +1,5 @@
-//
 //  QuestionView.swift
 //  Quift
-//
 //  Created by Muhammad Amiin Obidhonyi on 2022-11-28.
 //  https://youtu.be/b55npVkqa5U 
 
@@ -9,6 +7,7 @@ import SwiftUI
 
 struct QuestionView: View {
     @StateObject var quizManager = QuizManager.shared
+    @State var show = false
     var body: some View {
         VStack(spacing: 40) {
             HStack {
@@ -19,7 +18,6 @@ struct QuestionView: View {
                     .foregroundColor(Color("AccentColor"))
                     .fontWeight(.heavy)
             }
-
             ProgressBar(progress: quizManager.progress)
             
             VStack(alignment: .leading, spacing: 20) {

@@ -12,14 +12,12 @@ struct numberOfQuestionsView: View {
     
     var body: some View {
         Text("Total questions (Max 50*)")
-            .font(.title)
             .lilacTitle()
             .multilineTextAlignment(.center)
             .padding(.bottom)
         
         TextField("Number:", text: $quizManager.nrOfQuestionsFromUser)
             .multilineTextAlignment(.center)
-            .font(.title)
             .background()
             .frame(width: 220)
             .cornerRadius(15)

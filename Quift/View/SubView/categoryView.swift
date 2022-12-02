@@ -15,7 +15,7 @@ struct categoryView: View {
             .font(.title)
             .lilacTitle()
         ScrollView(.horizontal) {
-            LazyHStack(spacing: 55) {
+            LazyHStack(spacing: 30) {
                 ForEach(quizManager.getCategories().sorted(by: >), id: \.key) { key, value in
                     Button {
                         if clickedCategory == key {

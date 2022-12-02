@@ -29,7 +29,6 @@ struct GameSelectView: View {
             } label: {
                 PrimaryButton(text: "Start Quiz")
                     .padding(.top)
-                    .font(.system(size: 33))
                     .onSubmit {
                     }
             }
