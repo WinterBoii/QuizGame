@@ -17,11 +17,10 @@ struct TriviaView: View {
                     .lilacTitle()
                 
                 if quizManager.score >= quizManager.length*70/100 {
-                    Text("Congratulations, you have done great job!")
+                    Text("Congratulations, you have done a great job!")
                 } else{
                     Text("Nice try, Better luck next time!")
                 }
-                
                 
                 Text("You scored \(quizManager.score) out of \(quizManager.length)")
                 
