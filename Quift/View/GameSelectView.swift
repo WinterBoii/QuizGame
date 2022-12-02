@@ -23,8 +23,10 @@ struct GameSelectView: View {
         "Japanese Anime & Manga": 31,
         "Cartoon & Animations": 32
     ]
+    @State var nrOfQuestions: String = ""
     @State var selectedDifficulty: String?
     @State var selectedCategory: String?
+    @State var clickedCategory: String?
     
     var body: some View {
         VStack {
@@ -44,18 +46,19 @@ struct GameSelectView: View {
                 LazyHStack(spacing: 55) {
                     ForEach(categories.sorted(by: >), id: \.key) { key, value in
                         Button {
-                            if selectedCategory == key {
+                            if clickedCategory == key {
                                 selectedCategory = nil
                             } else {
-                                selectedCategory = key
+                                clickedCategory = key
+                                selectedCategory = String(value)
                             }
                             print(key)
                         } label: {
                             Text("\(key)")
                         }
                         .padding()
-                        .foregroundColor(selectedCategory == key ? Color.white : Color("AccentColor"))
-                        .background(selectedCategory == key ? Color("AccentColor") : quizManager.backgroundColor)
+                        .foregroundColor(clickedCategory == key ? Color.white : Color("AccentColor"))
+                        .background(clickedCategory == key ? Color("AccentColor") : quizManager.backgroundColor)
                         .cornerRadius(25)
                     }
                     .font(.system(size: 25))
@@ -64,7 +67,21 @@ struct GameSelectView: View {
             }
             .frame(width: 330 ,height: 99)
             
-            Spacer()
+            Text("Total questions (Max 50*)")
+                .font(.largeTitle)
+                .lilacTitle()
+                .multilineTextAlignment(.center)
+                
+            TextField("Number:", text: $nrOfQuestions)
+                .multilineTextAlignment(.center)
+                .font(.title)
+                .background()
+                .frame(width: 220)
+                .cornerRadius(15)
+                .foregroundColor(Color("AccentColor"))
+                //.onSubmit {
+                //    quizManager.validateQuestionNrInput(nr: Int(nrOfQuestions) ?? 10)
+               // }
             
             Text("Difficulty:")
                 .font(.largeTitle)
@@ -95,10 +112,10 @@ struct GameSelectView: View {
                     .padding(.top)
                     .font(.system(size: 33))
                     .onSubmit {
-                        //quizManager.getOptions(id: selectedCategory.value, level: selectedDifficulty, nrOfQuestions: "")
+                        quizManager.getOptions(id: selectedCategory ?? "", level: selectedDifficulty ?? "", nrOfQuestions: String(nrOfQuestions.isEmpty ? String(10) : nrOfQuestions))
                     }
             }
-            Spacer()
+            //Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(quizManager.backgroundColor)

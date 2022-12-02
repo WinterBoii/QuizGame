@@ -27,9 +27,7 @@ class QuizManager: ObservableObject {
     
     private init() {
         //task because our func is async
-        //options["category"] = String(2)
-        //options["category"] = nil
-        //options["amount"] = String(10)
+        
         
         Task.init {
             await fetchQuiz()
@@ -85,14 +83,14 @@ class QuizManager: ObservableObject {
     
     func getOptions(id: String, level: String, nrOfQuestions: String) {
         
-        nrOfQuestions.isEmpty ? (options["amount"] = String(10)) : (options["amount"] = nrOfQuestions)
+        //nrOfQuestions.isEmpty ? (options["amount"] = String(10)) : (options["amount"] = nrOfQuestions)
         if !id.isEmpty {
-            options["category"] = id
+            options["category"] = String(id)
         }
         if !level.isEmpty {
             options["difficulty"] = level
         }
-        
+        options["amount"] = nrOfQuestions
     }
     
     func goToNextQuestion() {
@@ -123,5 +121,15 @@ class QuizManager: ObservableObject {
         if answer.isCorrect {
             score += 1
         }
+    }
+    
+    func validateQuestionNrInput(nr: Int) -> String {
+        if nr < 1 {
+                return String(1)
+            }
+        if nr > 50 {
+                return String(50)
+            }
+        return String(nr)
     }
 }
