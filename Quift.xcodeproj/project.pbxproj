@@ -17,6 +17,9 @@
 		942B90E52934E51400C5F75F /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942B90E42934E51400C5F75F /* Quiz.swift */; };
 		942B90E72934E8CD00C5F75F /* QuizManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942B90E62934E8CD00C5F75F /* QuizManager.swift */; };
 		943592C9293684A7009AF4C9 /* GameSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943592C8293684A7009AF4C9 /* GameSelectView.swift */; };
+		94EFA266293A561A001D10AA /* categoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EFA265293A561A001D10AA /* categoryView.swift */; };
+		94EFA268293A5D97001D10AA /* difficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EFA267293A5D97001D10AA /* difficultyView.swift */; };
+		94EFA26A293A5FF5001D10AA /* numberOfQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EFA269293A5FF5001D10AA /* numberOfQuestionsView.swift */; };
 		F866D10A29291F7F005299F1 /* QuiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F866D10929291F7F005299F1 /* QuiftApp.swift */; };
 		F866D10C29291F7F005299F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F866D10B29291F7F005299F1 /* ContentView.swift */; };
 		F866D10E29291F80005299F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F866D10D29291F80005299F1 /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 		942B90E42934E51400C5F75F /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		942B90E62934E8CD00C5F75F /* QuizManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizManager.swift; sourceTree = "<group>"; };
 		943592C8293684A7009AF4C9 /* GameSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectView.swift; sourceTree = "<group>"; };
+		94EFA265293A561A001D10AA /* categoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryView.swift; sourceTree = "<group>"; };
+		94EFA267293A5D97001D10AA /* difficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = difficultyView.swift; sourceTree = "<group>"; };
+		94EFA269293A5FF5001D10AA /* numberOfQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberOfQuestionsView.swift; sourceTree = "<group>"; };
 		F866D10629291F7F005299F1 /* Quift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F866D10929291F7F005299F1 /* QuiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiftApp.swift; sourceTree = "<group>"; };
 		F866D10B29291F7F005299F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,12 +73,23 @@
 		942B90D72934C7F600C5F75F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				94EFA264293A5604001D10AA /* SubView */,
 				F866D10B29291F7F005299F1 /* ContentView.swift */,
 				942B90DA2934D2E200C5F75F /* QuestionView.swift */,
 				942B90E22934E3E400C5F75F /* TriviaView.swift */,
 				943592C8293684A7009AF4C9 /* GameSelectView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		94EFA264293A5604001D10AA /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				94EFA265293A561A001D10AA /* categoryView.swift */,
+				94EFA267293A5D97001D10AA /* difficultyView.swift */,
+				94EFA269293A5FF5001D10AA /* numberOfQuestionsView.swift */,
+			);
+			path = SubView;
 			sourceTree = "<group>";
 		};
 		F866D0FD29291F7F005299F1 = {
@@ -212,9 +229,12 @@
 				942B90E32934E3E400C5F75F /* TriviaView.swift in Sources */,
 				F866D10A29291F7F005299F1 /* QuiftApp.swift in Sources */,
 				943592C9293684A7009AF4C9 /* GameSelectView.swift in Sources */,
+				94EFA26A293A5FF5001D10AA /* numberOfQuestionsView.swift in Sources */,
 				942B90E72934E8CD00C5F75F /* QuizManager.swift in Sources */,
 				942B90DD2934D36800C5F75F /* ProgressBar.swift in Sources */,
+				94EFA266293A561A001D10AA /* categoryView.swift in Sources */,
 				942B90E12934D78300C5F75F /* AnswerRow.swift in Sources */,
+				94EFA268293A5D97001D10AA /* difficultyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

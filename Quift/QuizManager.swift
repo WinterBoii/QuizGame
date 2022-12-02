@@ -10,6 +10,7 @@ import SwiftUI
 
 class QuizManager: ObservableObject {
     private(set) var trivia: [QuizData.Result] = []
+    
     @Published private(set) var length = 0
     @Published private(set) var index = 0
     @Published private(set) var reachedEnd = false
@@ -21,17 +22,12 @@ class QuizManager: ObservableObject {
     @Published private(set) var timer = 0.0
     @Published public var backgroundColor: Color = Color("fire")
     
-    @Published var options:[String:String] = [:]
-    
-    
+    @Published var selectedCategory: String?
+    @Published var selectedDifficulty: String?
+    @Published var nrOfQuestionsFromUser: String = ""
+    @Published var options: [String:String] = [:]
     
     private init() {
-        //task because our func is async
-        
-        
-        Task.init {
-            await fetchQuiz()
-        }
     }
 
     public static var shared = QuizManager()
@@ -45,6 +41,7 @@ class QuizManager: ObservableObject {
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
             
             guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error at status code") }
+            
             
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -62,6 +59,7 @@ class QuizManager: ObservableObject {
                 self.trivia = decodedData.results
                 self.length = self.trivia.count
                 self.setQuestion()
+                print("hey")
             }
         } catch {
             print("Error fetching trivia: \(error)")
@@ -78,6 +76,7 @@ class QuizManager: ObservableObject {
         components.queryItems = querys.map{
             URLQueryItem(name: $0.key, value: $0.value)
         }
+        print(components.string!)
         return components.string!
     }
     
@@ -107,7 +106,7 @@ class QuizManager: ObservableObject {
         answerSelected = false
         progress = CGFloat(Double(index + 1) / Double(length) * 350)
         
-        print(progress)
+        //print(progress)
         
         if index < length {
             let currentQuestion = trivia[index]
@@ -131,5 +130,28 @@ class QuizManager: ObservableObject {
                 return String(50)
             }
         return String(nr)
+    }
+    
+    func getCategories() -> [String:Int]{
+        return [
+            "General Knowledge": 9,
+            "Film": 11,
+            "Video Games" : 15,
+            "Science & Nature": 17,
+            "Computers": 18,
+            "Mathematics": 19,
+            "Sports": 21,
+            "Geography": 22,
+            "Japanese Anime & Manga": 31,
+            "Cartoon & Animations": 32
+        ]
+    }
+    
+    func getDifficulty() -> [String:String] {
+        return [
+            "😌" : "easy",
+            "🧐" : "medium",
+            "🤯" : "hard"
+        ]
     }
 }
