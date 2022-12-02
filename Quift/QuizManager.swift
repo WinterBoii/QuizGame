@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class QuizManager: ObservableObject {
-    private(set) var trivia: [QuizData.Result] = []
+    @Published var trivia: [QuizData.Result] = []
     
     @Published private(set) var length = 0
     @Published private(set) var index = 0
