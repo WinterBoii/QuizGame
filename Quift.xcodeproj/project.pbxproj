@@ -17,6 +17,7 @@
 		942B90E52934E51400C5F75F /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942B90E42934E51400C5F75F /* Quiz.swift */; };
 		942B90E72934E8CD00C5F75F /* QuizManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942B90E62934E8CD00C5F75F /* QuizManager.swift */; };
 		943592C9293684A7009AF4C9 /* GameSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943592C8293684A7009AF4C9 /* GameSelectView.swift */; };
+		F8036970293A67C10010B4C9 /* QuitGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F803696F293A67C10010B4C9 /* QuitGameView.swift */; };
 		F866D10A29291F7F005299F1 /* QuiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F866D10929291F7F005299F1 /* QuiftApp.swift */; };
 		F866D10C29291F7F005299F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F866D10B29291F7F005299F1 /* ContentView.swift */; };
 		F866D10E29291F80005299F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F866D10D29291F80005299F1 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		942B90E42934E51400C5F75F /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		942B90E62934E8CD00C5F75F /* QuizManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizManager.swift; sourceTree = "<group>"; };
 		943592C8293684A7009AF4C9 /* GameSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectView.swift; sourceTree = "<group>"; };
+		F803696F293A67C10010B4C9 /* QuitGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitGameView.swift; sourceTree = "<group>"; };
 		F866D10629291F7F005299F1 /* Quift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F866D10929291F7F005299F1 /* QuiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiftApp.swift; sourceTree = "<group>"; };
 		F866D10B29291F7F005299F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				F866D10B29291F7F005299F1 /* ContentView.swift */,
 				942B90DA2934D2E200C5F75F /* QuestionView.swift */,
 				942B90E22934E3E400C5F75F /* TriviaView.swift */,
+				F803696F293A67C10010B4C9 /* QuitGameView.swift */,
 				943592C8293684A7009AF4C9 /* GameSelectView.swift */,
 			);
 			path = View;
@@ -209,6 +212,7 @@
 				942B90DF2934D50900C5F75F /* Answer.swift in Sources */,
 				942B90DB2934D2E200C5F75F /* QuestionView.swift in Sources */,
 				942B90D52934C76700C5F75F /* PrimaryButton.swift in Sources */,
+				F8036970293A67C10010B4C9 /* QuitGameView.swift in Sources */,
 				942B90E32934E3E400C5F75F /* TriviaView.swift in Sources */,
 				F866D10A29291F7F005299F1 /* QuiftApp.swift in Sources */,
 				943592C9293684A7009AF4C9 /* GameSelectView.swift in Sources */,
