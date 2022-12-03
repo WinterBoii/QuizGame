@@ -8,6 +8,7 @@ import SwiftUI
 struct QuestionView: View {
     @StateObject var quizManager = QuizManager.shared
     @State var show = false
+    
     var body: some View {
         VStack(spacing: 40) {
             HStack {
@@ -31,6 +32,7 @@ struct QuestionView: View {
                 }
             }
             .frame(maxWidth: 350)
+            .padding(.horizontal, 24)
             
             Button {
                 quizManager.goToNextQuestion()

@@ -14,7 +14,7 @@ struct numberOfQuestionsView: View {
         Text("Total questions (Max 50*)")
             .lilacTitle()
             .multilineTextAlignment(.center)
-            .padding(.bottom)
+            .padding()
         
         TextField("Number:", text: $quizManager.nrOfQuestionsFromUser)
             .multilineTextAlignment(.center)

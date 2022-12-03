@@ -21,6 +21,7 @@ class QuizManager: ObservableObject {
     @Published private(set) var score = 0
     @Published private(set) var timer = 0.0
     @Published public var backgroundColor: Color = Color("fire")
+    @Published var correctAnswer:String = ""
     
     @Published var selectedCategory: String?
     @Published var selectedDifficulty: String?
@@ -110,8 +111,10 @@ class QuizManager: ObservableObject {
         
         if index < length {
             let currentQuestion = trivia[index]
+       
             question = currentQuestion.formattedQuestion
             answerChoices = currentQuestion.answers
+           
         }
     }
     
