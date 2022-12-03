@@ -12,7 +12,7 @@ struct QuestionView: View {
     var body: some View {
         VStack(spacing: 40) {
             HStack {
-                Text("Trivia Game")
+                Text("Quiz Game")
                     .lilacTitle()
                 Spacer()
                 Text("\(quizManager.index + 1) out of \(quizManager.length)")

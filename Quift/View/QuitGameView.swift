@@ -25,7 +25,7 @@ struct QuitGameView: View {
                     Label("Quit", systemImage: "xmark")
                         .foregroundColor(Color("AccentColor"))
                 }
-                .alert("Dou want to quit?", isPresented: $showDismissWarning){
+                .alert("Dou you want to quit?", isPresented: $showDismissWarning){
                     Button(role: .destructive){
                         dismiss()
                     }label: {
