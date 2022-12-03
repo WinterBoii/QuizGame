@@ -17,7 +17,7 @@ struct difficultyView: View {
             .lilacTitle()
         
         HStack {
-            ForEach(quizManager.getDifficulty().sorted(by: >), id: \.key) { key, value in
+            ForEach(quizManager.getDifficulty().sorted(by: <), id: \.key) { key, value in
                 Button("\(key)") {
                     if clickedDifficulty == key {
                         clickedDifficulty = nil
