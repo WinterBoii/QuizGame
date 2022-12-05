@@ -10,6 +10,7 @@ import SwiftUI
 struct AnswerRow: View {
     @StateObject var quizManager = QuizManager.shared
     @State private var isSelected = false
+    @AppStorage("darkmode") var isDark: Bool = false
     var answer: Answer
     var green = Color(hue: 0.437, saturation: 0.711, brightness: 0.711)
     var red = Color(red: 0.71, green: 0.094, blue: 0.1)
@@ -31,15 +32,15 @@ struct AnswerRow: View {
             {
                 Spacer()
                 Image(systemName: "checkmark.circle.fill")
-                    .foregroundColor(.blue)
+                    .foregroundColor(.green)
             }
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .foregroundColor(quizManager.answerSelected ? (isSelected ? Color("AccentColor") : .gray) : Color("AccentColor"))
-        .background(.white)
+        .foregroundColor(quizManager.answerSelected ? (isSelected ? Color("AccentColor") : .gray) : isDark ? Color("dark_primary") : Color("AccentColor"))
+        .background(isDark ? Color("dark_mode") : .white)
         .cornerRadius(10)
-        .shadow(color: isSelected ? (answer.isCorrect ? green : red) : !isSelected && quizManager.answerSelected && answer.isCorrect ? .blue : .gray, radius: 15, x: 0.5, y: 0.5)
+        .shadow(color: isSelected ? (answer.isCorrect ? green : red) : !isSelected && quizManager.answerSelected && answer.isCorrect ? green : .gray, radius: 7, x: 0.5, y: 0.5)
         .onTapGesture {
             if !quizManager.answerSelected {
                 isSelected = true
@@ -51,6 +52,6 @@ struct AnswerRow: View {
 
 struct AnswerRow_Previews: PreviewProvider {
     static var previews: some View {
-        AnswerRow(answer: Answer(text: "Simple", isCorrect: false))
+        AnswerRow(answer: Answer(text: "Simple", isCorrect: true))
     }
 }

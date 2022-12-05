@@ -9,23 +9,26 @@ import SwiftUI
 
 struct headerView: View {
     @StateObject var quizManager = QuizManager.shared
+    @AppStorage("darkmode") var isDark: Bool = false
     
     var body: some View {
         VStack(spacing: 30) {
             HStack {
                 Text("Quiz Game")
+                    .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
                     .lilacTitle()
                 Spacer()
                 Text("\(quizManager.index + 1) out of \(quizManager.length)")
-                    .foregroundColor(Color("AccentColor"))
+                    .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
                     .fontWeight(.heavy)
             }
             
             Text("Category: " + (quizManager.selectedCategory ?? "General Knowledge"))
-                .foregroundColor(Color("AccentColor"))
+                .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
             
             ProgressBar(progress: quizManager.progress)
         }
+        .preferredColorScheme(isDark ? .dark : .light)
     }
 }
 

@@ -10,13 +10,14 @@ import SwiftUI
 struct PrimaryButton: View {
     var text: String
     var background: Color = Color("AccentColor")
+    @AppStorage("darkmode") var isDark: Bool = false
     
     var body: some View {
         Text(text)
             .foregroundColor(.white)
             .padding()
             .padding(.horizontal)
-            .background(background)
+            .background(isDark ? Color("dark-card") : background)
             .cornerRadius(30)
             .shadow(radius: 10)
     }
