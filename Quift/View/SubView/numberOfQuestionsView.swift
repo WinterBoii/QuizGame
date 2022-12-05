@@ -9,20 +9,24 @@ import SwiftUI
 
 struct numberOfQuestionsView: View {
     @StateObject var quizManager = QuizManager.shared
+    @State var clickedNmbr = 1
     
     var body: some View {
-        Text("Total questions (Max 50*)")
-            .lilacTitle()
-            .multilineTextAlignment(.center)
-            .padding()
-        
-        TextField("Number:", text: $quizManager.nrOfQuestionsFromUser)
-            .multilineTextAlignment(.center)
-            .background()
-            .frame(width: 220)
-            .cornerRadius(15)
-            .foregroundColor(Color("AccentColor"))
-            .padding(.bottom)
+        HStack(spacing: 10) {
+            Text("Total questions (Max 50*)")
+                .lilacTitle()
+            
+            Spacer()
+            
+            Picker("", selection: $clickedNmbr) {
+                ForEach(1..<51, id: \.self) {
+                    Text("\($0)")
+                }
+            }
+        }
+        .onChange(of: clickedNmbr) { _ in
+            quizManager.nrOfQuestionsFromUser = String(clickedNmbr)
+        }
     }
 }
 

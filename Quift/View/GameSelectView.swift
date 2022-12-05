@@ -17,9 +17,17 @@ struct GameSelectView: View {
                 .lilacTitle()
                 .underline()
             Spacer()
-            categoryView()
-            numberOfQuestionsView()
-            difficultyView()
+            Section {
+                categoryView()
+                numberOfQuestionsView()
+                difficultyView()
+            }
+            .frame(height: 110)
+            .padding(.horizontal)
+            .background()
+            .cornerRadius(25)
+            .padding()
+            
             NavigationLink {
                 TriviaView()
                     .task {
