@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GameSelectView: View {
     @StateObject var quizManager = QuizManager.shared
-    
     var body: some View {
         VStack {
             Text("Select Options")

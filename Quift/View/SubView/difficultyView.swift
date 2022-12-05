@@ -21,6 +21,7 @@ struct difficultyView: View {
             Spacer()
             
             Picker("", selection: $clickedDifficulty) {
+
                 ForEach(quizManager.getDifficulty().sorted(by: <), id: \.value) {
                     Text($0.key)
                         .frame(width: 50)

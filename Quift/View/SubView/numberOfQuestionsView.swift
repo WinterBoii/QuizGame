@@ -19,7 +19,7 @@ struct numberOfQuestionsView: View {
             
             Spacer()
             
-            Picker("", selection: $clickedNmbr) {
+            Picker("Select", selection: $clickedNmbr) {
                 ForEach(1..<51, id: \.self) {
                     Text("\($0)")
                 }

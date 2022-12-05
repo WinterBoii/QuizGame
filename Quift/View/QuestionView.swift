@@ -12,8 +12,7 @@ struct QuestionView: View {
     var body: some View {
         ZStack {
             VStack(spacing: 20) {
-                headerView()
-                
+                headerView()            
                 VStack(alignment: .leading, spacing: 30) {
                     Text(quizManager.question)
                         .font(.system(size: 20))
