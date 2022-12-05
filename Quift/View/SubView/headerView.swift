@@ -10,9 +10,11 @@ import SwiftUI
 struct headerView: View {
     @StateObject var quizManager = QuizManager.shared
     @AppStorage("darkmode") var isDark: Bool = false
+    @State private var showingAlert = false
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        VStack(spacing: 30) {
+        VStack(spacing: 23) {
             HStack {
                 Text("Quiz Game")
                     .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
@@ -22,7 +24,20 @@ struct headerView: View {
                     .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
                     .fontWeight(.heavy)
             }
-            
+            .toolbar {
+                Button {
+                    showingAlert.toggle()
+                } label: {
+                    Text("\(Image(systemName: "xmark"))")
+                }
+                .alert("Do you want to quit?", isPresented: $showingAlert) {
+                    Button(role: .destructive) {
+                        dismiss()
+                    } label: {
+                        Text("Yes")
+                    }
+                }
+            }
             Text("Category: " + (quizManager.selectedCategory ?? "General Knowledge"))
                 .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
             

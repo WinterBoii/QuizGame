@@ -10,10 +10,10 @@ struct QuestionView: View {
     @State var show = false
     @AppStorage("darkmode") var isDark: Bool = false
     var body: some View {
-        ZStack {
+        ScrollView {
             VStack(spacing: 20) {
                 headerView()            
-                VStack(alignment: .leading, spacing: 30) {
+                VStack(alignment: .leading, spacing: 20) {
                     Text(quizManager.question)
                         .font(.system(size: 20))
                         .bold()
@@ -33,12 +33,12 @@ struct QuestionView: View {
                 .disabled(!quizManager.answerSelected)
                 Spacer()
             }
-            .preferredColorScheme(isDark ? .dark : .light)
-            .padding()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(isDark ? Color("dark_mode") : quizManager.backgroundColor)
-            .navigationBarBackButtonHidden(true)
         }
+        .preferredColorScheme(isDark ? .dark : .light)
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(isDark ? Color("dark_mode") : quizManager.backgroundColor)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

@@ -11,30 +11,33 @@ struct GameSelectView: View {
     @StateObject var quizManager = QuizManager.shared
     @AppStorage("darkmode") var isDark: Bool = false
     var body: some View {
-        VStack {
-            Text("Select Options")
-                .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
-                .lilacTitle()
-            sectionOptionsView()
-                .frame(height: 110)
-                .padding(.horizontal)
-                .background(isDark ? Color("dark-card") : .white)
-                .cornerRadius(25)
-                .padding()
-            
-            NavigationLink {
-                TriviaView()
-                    .task {
-                        quizManager.getOptions(id: quizManager.getCodeByCategory(category: quizManager.selectedCategory ?? ""), level: quizManager.selectedDifficulty ?? "", nrOfQuestions: String(quizManager.nrOfQuestionsFromUser.isEmpty ? String(5) : quizManager.nrOfQuestionsFromUser))
-                        await quizManager.fetchQuiz()
-                    }
-            } label: {
-                PrimaryButton(text: "Start Quiz")
-                    .padding(.top)
-                    .onSubmit {
-                    }
+        ScrollView {
+            VStack {
+                Text("Select Options")
+                    .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
+                    .lilacTitle()
+                sectionOptionsView()
+                    .frame(height: 110)
+                    .padding(.horizontal)
+                    .background(isDark ? Color("dark-card") : .white)
+                    .cornerRadius(25)
+                    .padding()
+                
+                NavigationLink {
+                    TriviaView()
+                        .task {
+                            quizManager.getOptions(id: quizManager.getCodeByCategory(category: quizManager.selectedCategory ?? ""), level: quizManager.selectedDifficulty ?? "", nrOfQuestions: String(quizManager.nrOfQuestionsFromUser.isEmpty ? String(5) : quizManager.nrOfQuestionsFromUser))
+                            await quizManager.fetchQuiz()
+                        }
+                } label: {
+                    PrimaryButton(text: "Start Quiz")
+                        .padding(.top)
+                        .onSubmit {
+                        }
+                }
+                Spacer()
             }
-            Spacer()
+            
         }
         .preferredColorScheme(isDark ? .dark : .light)
         .frame(maxWidth: .infinity, maxHeight: .infinity)

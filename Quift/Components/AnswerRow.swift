@@ -40,7 +40,7 @@ struct AnswerRow: View {
         .foregroundColor(quizManager.answerSelected ? (isSelected ? Color("AccentColor") : .gray) : isDark ? Color("dark_primary") : Color("AccentColor"))
         .background(isDark ? Color("dark_mode") : .white)
         .cornerRadius(10)
-        .shadow(color: isSelected ? (answer.isCorrect ? green : red) : !isSelected && quizManager.answerSelected && answer.isCorrect ? green : .gray, radius: 7, x: 0.5, y: 0.5)
+        .shadow(color: isSelected ? (answer.isCorrect ? green : red) : !isSelected && quizManager.answerSelected && answer.isCorrect ? green : .gray, radius: 10, x: 0.5, y: 0.5)
         .onTapGesture {
             if !quizManager.answerSelected {
                 isSelected = true

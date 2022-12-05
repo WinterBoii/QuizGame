@@ -23,10 +23,8 @@ struct TriviaView: View {
                     }
                     Text("You scored \(quizManager.score) out of \(quizManager.length)")
                     
-                    Button {
-                        Task.init {
-                            await quizManager.fetchQuiz()
-                        }
+                    NavigationLink {
+                        GameSelectView()
                     } label: {
                         PrimaryButton(text: "Play again")
                     }
