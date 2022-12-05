@@ -9,11 +9,12 @@ import SwiftUI
 
 struct numberOfQuestionsView: View {
     @StateObject var quizManager = QuizManager.shared
-    @State var clickedNmbr = 1
+    @State var clickedNmbr: Int = 5
     
     var body: some View {
         HStack(spacing: 10) {
             Text("Total questions (Max 50*)")
+                .font(.title2)
                 .lilacTitle()
             
             Spacer()

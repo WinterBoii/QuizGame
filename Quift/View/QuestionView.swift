@@ -11,24 +11,14 @@ struct QuestionView: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 40) {
-                HStack {
-                    Text("Quiz Game")
-                        .lilacTitle()
-                    Spacer()
-                    Text("\(quizManager.index + 1) out of \(quizManager.length)")
-                        .foregroundColor(Color("AccentColor"))
-                        .fontWeight(.heavy)
-                }
-                Text(quizManager.selectedCategory ?? "")
-                ProgressBar(progress: quizManager.progress)
+            VStack(spacing: 20) {
+                headerView()
                 
-                VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: 30) {
                     Text(quizManager.question)
                         .font(.system(size: 20))
                         .bold()
                         .foregroundColor(.black)
-                        .background(.red)
                     
                     ForEach(quizManager.answerChoices, id: \.id) { answer in
                         AnswerRow(answer: answer)
