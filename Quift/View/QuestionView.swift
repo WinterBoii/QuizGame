@@ -11,8 +11,6 @@ struct QuestionView: View {
     
     var body: some View {
         ZStack {
-            
-            
             VStack(spacing: 40) {
                 HStack {
                     Text("Quiz Game")
@@ -22,6 +20,7 @@ struct QuestionView: View {
                         .foregroundColor(Color("AccentColor"))
                         .fontWeight(.heavy)
                 }
+                Text(quizManager.selectedCategory ?? "")
                 ProgressBar(progress: quizManager.progress)
                 
                 VStack(alignment: .leading, spacing: 20) {
@@ -29,16 +28,13 @@ struct QuestionView: View {
                         .font(.system(size: 20))
                         .bold()
                         .foregroundColor(.black)
-                        .frame(maxWidth: 250)
+                        .background(.red)
                     
                     ForEach(quizManager.answerChoices, id: \.id) { answer in
                         AnswerRow(answer: answer)
                     }
                     .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding(.horizontal)
                 }
-                .frame(maxWidth: 250)
-                .padding(.horizontal, 24)
                 
                 Button {
                     quizManager.goToNextQuestion()
@@ -51,7 +47,7 @@ struct QuestionView: View {
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(quizManager.backgroundColor)
-        .navigationBarBackButtonHidden(true)
+            .navigationBarBackButtonHidden(true)
         }
     }
 }

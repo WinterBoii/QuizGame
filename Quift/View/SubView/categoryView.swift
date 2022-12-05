@@ -9,40 +9,29 @@ import SwiftUI
 
 struct categoryView: View {
     @StateObject var quizManager = QuizManager.shared
-    @State var clickedCategory: String?
+    @State var clickedCategory: String = "Computers"
+    
     var body: some View {
-        Text("Category:")
-            .font(.title)
-            .lilacTitle()
-        ScrollView(.horizontal) {
-            LazyHStack(spacing: 30) {
-                ForEach(quizManager.getCategories().sorted(by: >), id: \.key) { key, value in
-                    Button {
-                        if clickedCategory == key {
-                            clickedCategory = nil
-                            quizManager.selectedCategory = nil
-                        } else {
-                            clickedCategory = key
-                            quizManager.selectedCategory = String(value)
-                        }
-                        print(key)
-                    } label: {
-                        Text("\(key)")
-                    }
-                    .padding()
-                    .foregroundColor(clickedCategory == key ? Color.white : Color("AccentColor"))
-                    .background(clickedCategory == key ? Color("AccentColor") : quizManager.backgroundColor)
-                    .cornerRadius(25)
+        HStack(spacing: 10) {
+            Text("Category:")
+                .font(.title)
+                .lilacTitle()
+            
+            Spacer()
+            
+            Picker("", selection: $clickedCategory) {
+                ForEach(quizManager.getCategories().sorted(by: >), id: \.key) {
+                    Text($0.key)
                 }
-                .font(.system(size: 25))
             }
         }
-        .frame(width: 330 ,height: 99)
+        .onChange(of: clickedCategory) { _ in
+            quizManager.selectedCategory = clickedCategory
+        }
     }
 }
 
 struct categoryView_Previews: PreviewProvider {
-    
     static var previews: some View {
         categoryView()
     }

@@ -9,32 +9,26 @@ import SwiftUI
 
 struct difficultyView: View {
     @StateObject var quizManager = QuizManager.shared
-    @State var clickedDifficulty: String?
+    @State var clickedDifficulty: String = ""
     
     var body: some View {
-        Text("Difficulty:")
-            .font(.title)
-            .lilacTitle()
         
-        HStack {
-            ForEach(quizManager.getDifficulty().sorted(by: <), id: \.key) { key, value in
-                Button("\(key)") {
-                    if clickedDifficulty == key {
-                        clickedDifficulty = nil
-                        quizManager.selectedDifficulty = nil
-                    } else {
-                        clickedDifficulty = key
-                        quizManager.selectedDifficulty = value
-                    }
-                    print(key)
+        HStack(spacing: 10) {
+            Text("Difficulty:")
+                .font(.title)
+                .lilacTitle()
+            
+            Spacer()
+            
+            Picker("", selection: $clickedDifficulty) {
+                ForEach(quizManager.getDifficulty().sorted(by: >), id: \.key) {
+                    Text($0.key)
+                        .frame(width: 50)
                 }
-                .font(.system(size: 50))
-                .padding(.horizontal)
-                .background(quizManager.selectedDifficulty == value ? Color("AccentColor") : quizManager.backgroundColor)
-                .cornerRadius(33)
-                .padding(.bottom)
-                .padding(.top)
             }
+        }
+        .onChange(of: clickedDifficulty) { _ in
+            quizManager.selectedDifficulty = clickedDifficulty
         }
     }
 }
