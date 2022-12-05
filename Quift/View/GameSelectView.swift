@@ -9,15 +9,16 @@ import SwiftUI
 
 struct GameSelectView: View {
     @StateObject var quizManager = QuizManager.shared
+    @AppStorage("darkmode") var isDark: Bool = false
     var body: some View {
         VStack {
             Text("Select Options")
+                .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
                 .lilacTitle()
-                .underline()
             sectionOptionsView()
                 .frame(height: 110)
                 .padding(.horizontal)
-                .background()
+                .background(isDark ? Color("dark-card") : .white)
                 .cornerRadius(25)
                 .padding()
             
@@ -35,9 +36,9 @@ struct GameSelectView: View {
             }
             Spacer()
         }
+        .preferredColorScheme(isDark ? .dark : .light)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(quizManager.backgroundColor)
-        
+        .background(isDark ? Color("dark_mode") : quizManager.backgroundColor)
     }
 }
 

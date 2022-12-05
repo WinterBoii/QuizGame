@@ -9,25 +9,34 @@ import SwiftUI
 
 struct difficultyView: View {
     @StateObject var quizManager = QuizManager.shared
+    @AppStorage("darkmode") var isDark: Bool = false
     @State var clickedDifficulty: String = ""
     
     var body: some View {
         
         HStack(spacing: 10) {
             Text("Difficulty:")
+                .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
                 .font(.title2)
                 .lilacTitle()
             
             Spacer()
             
-            Picker("", selection: $clickedDifficulty) {
+            Menu {
+                Picker("", selection: $clickedDifficulty) {
 
-                ForEach(quizManager.getDifficulty().sorted(by: <), id: \.value) {
-                    Text($0.key)
-                        .frame(width: 50)
+                    ForEach(quizManager.getDifficulty().sorted(by: <), id: \.value) {
+                        Text($0.key)
+                            .frame(width: 50)
+                    }
                 }
+            } label: {
+                Text(clickedDifficulty.capitalized)
+                Image(systemName: "arrow.up.arrow.down")
             }
+            .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
         }
+        .preferredColorScheme(isDark ? .dark : .light)
         .onChange(of: clickedDifficulty) { _ in
             quizManager.selectedDifficulty = clickedDifficulty
         }

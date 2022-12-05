@@ -8,7 +8,7 @@ import SwiftUI
 struct QuestionView: View {
     @StateObject var quizManager = QuizManager.shared
     @State var show = false
-    
+    @AppStorage("darkmode") var isDark: Bool = false
     var body: some View {
         ZStack {
             VStack(spacing: 20) {
@@ -17,7 +17,7 @@ struct QuestionView: View {
                     Text(quizManager.question)
                         .font(.system(size: 20))
                         .bold()
-                        .foregroundColor(.black)
+                        .foregroundColor(isDark ? Color("dark_primary") : .black)
                     
                     ForEach(quizManager.answerChoices, id: \.id) { answer in
                         AnswerRow(answer: answer)
@@ -33,9 +33,10 @@ struct QuestionView: View {
                 .disabled(!quizManager.answerSelected)
                 Spacer()
             }
+            .preferredColorScheme(isDark ? .dark : .light)
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(quizManager.backgroundColor)
+            .background(isDark ? Color("dark_mode") : quizManager.backgroundColor)
             .navigationBarBackButtonHidden(true)
         }
     }

@@ -9,12 +9,14 @@ import SwiftUI
 
 struct sectionOptionsView: View {
     @StateObject var quizManager = QuizManager.shared
+    @AppStorage("darkmode") var isDark: Bool = false
 
     var body: some View {
         Section {
             categoryView()
             numberOfQuestionsView()
             difficultyView()
+            Toggle("Dark mode", isOn: $isDark)
         }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TriviaView: View {
     @StateObject var quizManager = QuizManager.shared
-    
+    @AppStorage("darkmode") var isDark: Bool = false
     var body: some View {
         ZStack {
             if quizManager.reachedEnd {
@@ -31,10 +31,11 @@ struct TriviaView: View {
                         PrimaryButton(text: "Play again")
                     }
                 }
-                .foregroundColor(Color("AccentColor"))
+                .preferredColorScheme(isDark ? .dark : .light)
+                .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
                 .padding()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(quizManager.backgroundColor)
+                .background(isDark ? Color("dark_mode") : quizManager.backgroundColor)
                 .navigationBarBackButtonHidden(true)
             } else {
                 QuestionView()

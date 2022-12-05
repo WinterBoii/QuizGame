@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProgressBar: View {
     @StateObject var quizManager = QuizManager.shared
+    @AppStorage("darkmode") var isDark: Bool = false
     var progress: CGFloat
     
     var body: some View {

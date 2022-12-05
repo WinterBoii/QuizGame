@@ -9,16 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var quizManager = QuizManager.shared
+    @AppStorage("darkmode") var isDark: Bool = false
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 40) {
                 VStack(spacing: 20) {
                     Text("Quiz Game")
+                        .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
                         .lilacTitle()
                     
                     Text("Are you ready to play?")
-                        .foregroundColor(Color("AccentColor"))
+                        .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
                 }
                 
                 NavigationLink {
@@ -27,9 +29,10 @@ struct ContentView: View {
                     PrimaryButton(text: "Lets Go!")
                 }
             }
+            .preferredColorScheme(isDark ? .dark : .light)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .edgesIgnoringSafeArea(.all)
-            .background(quizManager.backgroundColor)
+            .background(isDark ? Color("dark_mode") : quizManager.backgroundColor)
         }
     }
 }
