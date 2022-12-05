@@ -135,6 +135,10 @@ class QuizManager: ObservableObject {
         return String(nr)
     }
     
+    func getCodeByCategory(category: String) -> String {
+        return String(getCategories()[category] ?? 9)
+    }
+    
     func getCategories() -> [String:Int]{
         return [
             "General Knowledge": 9,

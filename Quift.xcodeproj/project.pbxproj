@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94098E72293E1411006B56F1 /* headerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94098E71293E1411006B56F1 /* headerView.swift */; };
+		94098E74293E149F006B56F1 /* sectionOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94098E73293E149F006B56F1 /* sectionOptionsView.swift */; };
 		942B90D52934C76700C5F75F /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942B90D42934C76700C5F75F /* PrimaryButton.swift */; };
 		942B90D92934D23A00C5F75F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942B90D82934D23A00C5F75F /* Extensions.swift */; };
 		942B90DB2934D2E200C5F75F /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942B90DA2934D2E200C5F75F /* QuestionView.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		94098E71293E1411006B56F1 /* headerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerView.swift; sourceTree = "<group>"; };
+		94098E73293E149F006B56F1 /* sectionOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sectionOptionsView.swift; sourceTree = "<group>"; };
 		942B90D42934C76700C5F75F /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		942B90D82934D23A00C5F75F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		942B90DA2934D2E200C5F75F /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
@@ -85,9 +89,11 @@
 		94EFA264293A5604001D10AA /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				94098E73293E149F006B56F1 /* sectionOptionsView.swift */,
 				94EFA265293A561A001D10AA /* categoryView.swift */,
 				94EFA267293A5D97001D10AA /* difficultyView.swift */,
 				94EFA269293A5FF5001D10AA /* numberOfQuestionsView.swift */,
+				94098E71293E1411006B56F1 /* headerView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -229,12 +235,14 @@
 				942B90E32934E3E400C5F75F /* TriviaView.swift in Sources */,
 				F866D10A29291F7F005299F1 /* QuiftApp.swift in Sources */,
 				943592C9293684A7009AF4C9 /* GameSelectView.swift in Sources */,
+				94098E72293E1411006B56F1 /* headerView.swift in Sources */,
 				94EFA26A293A5FF5001D10AA /* numberOfQuestionsView.swift in Sources */,
 				942B90E72934E8CD00C5F75F /* QuizManager.swift in Sources */,
 				942B90DD2934D36800C5F75F /* ProgressBar.swift in Sources */,
 				94EFA266293A561A001D10AA /* categoryView.swift in Sources */,
 				942B90E12934D78300C5F75F /* AnswerRow.swift in Sources */,
 				94EFA268293A5D97001D10AA /* difficultyView.swift in Sources */,
+				94098E74293E149F006B56F1 /* sectionOptionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

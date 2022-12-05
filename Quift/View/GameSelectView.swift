@@ -14,22 +14,17 @@ struct GameSelectView: View {
             Text("Select Options")
                 .lilacTitle()
                 .underline()
-            Spacer()
-            Section {
-                categoryView()
-                numberOfQuestionsView()
-                difficultyView()
-            }
-            .frame(height: 110)
-            .padding(.horizontal)
-            .background()
-            .cornerRadius(25)
-            .padding()
+            sectionOptionsView()
+                .frame(height: 110)
+                .padding(.horizontal)
+                .background()
+                .cornerRadius(25)
+                .padding()
             
             NavigationLink {
                 TriviaView()
                     .task {
-                        quizManager.getOptions(id: quizManager.selectedCategory ?? "", level: quizManager.selectedDifficulty ?? "", nrOfQuestions: String(quizManager.nrOfQuestionsFromUser.isEmpty ? String(5) : quizManager.nrOfQuestionsFromUser))
+                        quizManager.getOptions(id: quizManager.getCodeByCategory(category: quizManager.selectedCategory ?? ""), level: quizManager.selectedDifficulty ?? "", nrOfQuestions: String(quizManager.nrOfQuestionsFromUser.isEmpty ? String(5) : quizManager.nrOfQuestionsFromUser))
                         await quizManager.fetchQuiz()
                     }
             } label: {
@@ -42,6 +37,7 @@ struct GameSelectView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(quizManager.backgroundColor)
+        
     }
 }
 

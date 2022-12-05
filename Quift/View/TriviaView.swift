@@ -13,7 +13,7 @@ struct TriviaView: View {
     var body: some View {
         ZStack {
             if quizManager.reachedEnd {
-                VStack(spacing: 20) {
+                VStack(spacing: 40) {
                     Text("Quiz Game")
                         .lilacTitle()
                     if quizManager.score >= quizManager.length*70/100 {
@@ -21,7 +21,6 @@ struct TriviaView: View {
                     } else{
                         Text("Nice try, Better luck next time!")
                     }
-                    
                     Text("You scored \(quizManager.score) out of \(quizManager.length)")
                     
                     Button {

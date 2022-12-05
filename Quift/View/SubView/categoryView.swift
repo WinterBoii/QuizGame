@@ -9,7 +9,7 @@ import SwiftUI
 
 struct categoryView: View {
     @StateObject var quizManager = QuizManager.shared
-    @State var clickedCategory: String = "Computers"
+    @State var clickedCategory: String = ""
     
     var body: some View {
         HStack(spacing: 10) {
@@ -19,8 +19,8 @@ struct categoryView: View {
             
             Spacer()
             
-            Picker("Select", selection: $clickedCategory) {
-                ForEach(quizManager.getCategories().sorted(by: >), id: \.key) {
+            Picker("", selection: $clickedCategory) {
+                ForEach(quizManager.getCategories().sorted(by: <), id: \.key) {
                     Text($0.key)
                 }
             }
