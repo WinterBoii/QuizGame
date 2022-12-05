@@ -12,7 +12,6 @@ struct QuiftApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-            //GameSelectView()
         }
     }
 }
