@@ -11,7 +11,7 @@ struct QuestionView: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 40) {
+            VStack(spacing: 30) {
                 HStack {
                     Text("Quiz Game")
                         .lilacTitle()
@@ -20,7 +20,8 @@ struct QuestionView: View {
                         .foregroundColor(Color("AccentColor"))
                         .fontWeight(.heavy)
                 }
-                Text(quizManager.selectedCategory ?? "")
+                Text("Category: " + "\(quizManager.selectedCategory ?? "Random")")
+                    .foregroundColor(Color("AccentColor"))
                 ProgressBar(progress: quizManager.progress)
                 
                 VStack(alignment: .leading, spacing: 20) {

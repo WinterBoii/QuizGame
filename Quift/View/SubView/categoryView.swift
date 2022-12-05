@@ -14,12 +14,12 @@ struct categoryView: View {
     var body: some View {
         HStack(spacing: 10) {
             Text("Category:")
-                .font(.title)
+                .font(.title2)
                 .lilacTitle()
             
             Spacer()
             
-            Picker("", selection: $clickedCategory) {
+            Picker("Select", selection: $clickedCategory) {
                 ForEach(quizManager.getCategories().sorted(by: >), id: \.key) {
                     Text($0.key)
                 }

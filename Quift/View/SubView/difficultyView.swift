@@ -15,13 +15,13 @@ struct difficultyView: View {
         
         HStack(spacing: 10) {
             Text("Difficulty:")
-                .font(.title)
+                .font(.title2)
                 .lilacTitle()
             
             Spacer()
             
-            Picker("", selection: $clickedDifficulty) {
-                ForEach(quizManager.getDifficulty().sorted(by: >), id: \.key) {
+            Picker("Select", selection: $clickedDifficulty) {
+                ForEach(quizManager.getDifficulty().sorted(by: <), id: \.value) {
                     Text($0.key)
                         .frame(width: 50)
                 }
