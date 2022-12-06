@@ -14,6 +14,12 @@ extension Text {
             .fontWeight(.heavy)
             .foregroundColor(Color("AccentColor"))
     }
+    
+    func btnShape() -> some View {
+        self.font(.title2)
+            .padding()
+            .frame(width: 50, height: 50)
+    }
 }
 
 // https://www.hackingwithswift.com/example-code/uicolor/how-to-convert-a-hex-color-to-a-uicolor

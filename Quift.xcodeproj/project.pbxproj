@@ -19,6 +19,7 @@
 		942B90E52934E51400C5F75F /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942B90E42934E51400C5F75F /* Quiz.swift */; };
 		942B90E72934E8CD00C5F75F /* QuizManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942B90E62934E8CD00C5F75F /* QuizManager.swift */; };
 		943592C9293684A7009AF4C9 /* GameSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943592C8293684A7009AF4C9 /* GameSelectView.swift */; };
+		94D17931293F626300D0730A /* ScoreShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D17930293F626300D0730A /* ScoreShape.swift */; };
 		94EFA266293A561A001D10AA /* categoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EFA265293A561A001D10AA /* categoryView.swift */; };
 		94EFA268293A5D97001D10AA /* difficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EFA267293A5D97001D10AA /* difficultyView.swift */; };
 		94EFA26A293A5FF5001D10AA /* numberOfQuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EFA269293A5FF5001D10AA /* numberOfQuestionsView.swift */; };
@@ -42,6 +43,7 @@
 		942B90E42934E51400C5F75F /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		942B90E62934E8CD00C5F75F /* QuizManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizManager.swift; sourceTree = "<group>"; };
 		943592C8293684A7009AF4C9 /* GameSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectView.swift; sourceTree = "<group>"; };
+		94D17930293F626300D0730A /* ScoreShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreShape.swift; sourceTree = "<group>"; };
 		94EFA265293A561A001D10AA /* categoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryView.swift; sourceTree = "<group>"; };
 		94EFA267293A5D97001D10AA /* difficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = difficultyView.swift; sourceTree = "<group>"; };
 		94EFA269293A5FF5001D10AA /* numberOfQuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberOfQuestionsView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				942B90D42934C76700C5F75F /* PrimaryButton.swift */,
 				942B90DC2934D36800C5F75F /* ProgressBar.swift */,
 				942B90E02934D78300C5F75F /* AnswerRow.swift */,
+				94D17930293F626300D0730A /* ScoreShape.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				94EFA26A293A5FF5001D10AA /* numberOfQuestionsView.swift in Sources */,
 				942B90E72934E8CD00C5F75F /* QuizManager.swift in Sources */,
 				942B90DD2934D36800C5F75F /* ProgressBar.swift in Sources */,
+				94D17931293F626300D0730A /* ScoreShape.swift in Sources */,
 				94EFA266293A561A001D10AA /* categoryView.swift in Sources */,
 				942B90E12934D78300C5F75F /* AnswerRow.swift in Sources */,
 				94EFA268293A5D97001D10AA /* difficultyView.swift in Sources */,

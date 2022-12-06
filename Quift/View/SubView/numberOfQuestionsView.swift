@@ -13,22 +13,24 @@ struct numberOfQuestionsView: View {
     @State var clickedNmbr: Int = 5
     
     var body: some View {
-        HStack(spacing: 10) {
-            Text("Total questions (Max 50*)")
+        ZStack(alignment: .leading) {
+            Text("Questions")
                 .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
                 .font(.title2)
                 .lilacTitle()
-            
             Spacer()
             
             Menu {
-                Picker("Select", selection: $clickedNmbr) {
+                Picker("", selection: $clickedNmbr) {
                     ForEach(1..<51, id: \.self) {
                         Text("\($0)")
                     }
                 }
             } label: {
+                Spacer()
+                    .frame(width: 250)
                 Text("\(clickedNmbr)")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 Image(systemName: "arrow.up.arrow.down")
             }
             .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))

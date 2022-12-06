@@ -13,16 +13,18 @@ struct TriviaView: View {
     var body: some View {
         ZStack {
             if quizManager.reachedEnd {
-                VStack(spacing: 40) {
+                VStack(spacing: 55) {
                     Text("Quiz Game")
+                        .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
                         .lilacTitle()
+                    Text( (quizManager.score >= quizManager.length*70/100) ? "👍" : "👎")
+                        .font(.system(size: 100))
                     if quizManager.score >= quizManager.length*70/100 {
                         Text("Congratulations, you have done a great job!")
                     } else{
                         Text("Nice try, Better luck next time!")
                     }
-                    Text("You scored \(quizManager.score) out of \(quizManager.length)")
-                    
+                    ScoreShape()
                     NavigationLink {
                         GameSelectView()
                     } label: {

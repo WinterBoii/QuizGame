@@ -14,31 +14,34 @@ struct difficultyView: View {
     
     var body: some View {
         
-        HStack(spacing: 10) {
-            Text("Difficulty:")
-                .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
-                .font(.title2)
-                .lilacTitle()
-            
-            Spacer()
-            
-            Menu {
-                Picker("", selection: $clickedDifficulty) {
+        ZStack(alignment: .leading) {
+                Text("Difficulty:")
+                    .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
+                    .font(.title2)
+                    .lilacTitle()
+                
+                Spacer()
+                
+                Menu {
+                    Picker("", selection: $clickedDifficulty) {
 
-                    ForEach(quizManager.getDifficulty().sorted(by: <), id: \.value) {
-                        Text($0.key)
-                            .frame(width: 50)
+                        ForEach(quizManager.getDifficulty().sorted(by: <), id: \.value) {
+                            Text($0.key)
+                                .frame(width: 50)
+                        }
                     }
+                } label: {
+                    Spacer()
+                        .frame(width: 200)
+                    Text(clickedDifficulty.capitalized)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    Image(systemName: "arrow.up.arrow.down")
                 }
-            } label: {
-                Text(clickedDifficulty.capitalized)
-                Image(systemName: "arrow.up.arrow.down")
+                .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
             }
-            .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
-        }
-        .preferredColorScheme(isDark ? .dark : .light)
-        .onChange(of: clickedDifficulty) { _ in
-            quizManager.selectedDifficulty = clickedDifficulty
+            .preferredColorScheme(isDark ? .dark : .light)
+            .onChange(of: clickedDifficulty) { _ in
+                quizManager.selectedDifficulty = clickedDifficulty
         }
     }
 }

@@ -17,7 +17,11 @@ struct sectionOptionsView: View {
             numberOfQuestionsView()
             difficultyView()
             Toggle("Dark mode", isOn: $isDark)
+                .font(.title)
+                .fontWeight(.heavy)
+                .foregroundColor(isDark ? Color("dark_primary") : Color("AccentColor"))
         }
+        .preferredColorScheme(isDark ? .dark : .light)
     }
 }
 

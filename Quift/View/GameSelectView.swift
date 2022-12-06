@@ -37,7 +37,6 @@ struct GameSelectView: View {
                 }
                 Spacer()
             }
-            
         }
         .preferredColorScheme(isDark ? .dark : .light)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
