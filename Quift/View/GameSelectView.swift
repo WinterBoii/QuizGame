@@ -31,7 +31,7 @@ struct GameSelectView: View {
                         }
                 } label: {
                     PrimaryButton(text: "Start Quiz")
-                        .padding(.top)
+                        .padding(.vertical)
                         .onSubmit {
                         }
                 }
