@@ -32,6 +32,7 @@ struct headerView: View {
                 }
                 .alert("Do you want to quit?", isPresented: $showingAlert) {
                     Button(role: .destructive) {
+                        quizManager.resetQuiz()
                         dismiss()
                     } label: {
                         Text("Yes")

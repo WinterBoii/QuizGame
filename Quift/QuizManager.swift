@@ -67,6 +67,12 @@ class QuizManager: ObservableObject {
         }
     }
     
+    func resetQuiz() {
+        self.selectedDifficulty = nil
+        self.selectedCategory = nil
+        self.nrOfQuestionsFromUser = ""
+    }
+    
     func createURL(querys:[String:String]) -> String{
         var components = URLComponents()
         
@@ -82,8 +88,6 @@ class QuizManager: ObservableObject {
     }
     
     func getOptions(id: String, level: String, nrOfQuestions: String) {
-        
-        //nrOfQuestions.isEmpty ? (options["amount"] = String(10)) : (options["amount"] = nrOfQuestions)
         if !id.isEmpty {
             options["category"] = String(id)
         }
@@ -111,10 +115,8 @@ class QuizManager: ObservableObject {
         
         if index < length {
             let currentQuestion = trivia[index]
-       
             question = currentQuestion.formattedQuestion
             answerChoices = currentQuestion.answers
-           
         }
     }
     
