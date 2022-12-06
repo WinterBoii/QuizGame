@@ -10,7 +10,7 @@ import SwiftUI
 struct categoryView: View {
     @StateObject var quizManager = QuizManager.shared
     @AppStorage("darkmode") var isDark: Bool = false
-    @State var clickedCategory: String = ""
+    @State var clickedCategory: String = "Random"
     
     var body: some View {
         ZStack(alignment: .leading) {

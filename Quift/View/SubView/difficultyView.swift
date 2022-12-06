@@ -10,7 +10,7 @@ import SwiftUI
 struct difficultyView: View {
     @StateObject var quizManager = QuizManager.shared
     @AppStorage("darkmode") var isDark: Bool = false
-    @State var clickedDifficulty: String = ""
+    @State var clickedDifficulty: String = "Random"
     
     var body: some View {
         

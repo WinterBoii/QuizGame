@@ -19,12 +19,13 @@ struct ScoreShape: View {
                 .cornerRadius(15)
             Text("/")
                 .font(.title)
+                .foregroundColor(isDark ? Color(.white) : Color("AccentColor"))
             Text("\(quizManager.length)")
                 .btnShape()
                 .background(isDark ? Color("dark-card") : Color("AccentColor"))
                 .cornerRadius(15)
         }
-        .foregroundColor(isDark ? Color(.white) : Color("AccentColor"))
+        .foregroundColor(Color(.white))
     }
 }
 
