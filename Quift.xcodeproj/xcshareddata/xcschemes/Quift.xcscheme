@@ -29,6 +29,36 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "945D3F19293F9D83004C0CEB"
+               BuildableName = "QuiftTests.xctest"
+               BlueprintName = "QuiftTests"
+               ReferencedContainer = "container:Quift.xcodeproj">
+            </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "QuiftTests">
+               </Test>
+               <Test
+                  Identifier = "ScoreTests">
+               </Test>
+            </SkippedTests>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "945D3F26293F9D99004C0CEB"
+               BuildableName = "QuiftUITests.xctest"
+               BlueprintName = "QuiftUITests"
+               ReferencedContainer = "container:Quift.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

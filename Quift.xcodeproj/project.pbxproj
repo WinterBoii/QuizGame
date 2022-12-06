@@ -20,6 +20,9 @@
 		942B90E72934E8CD00C5F75F /* QuizManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942B90E62934E8CD00C5F75F /* QuizManager.swift */; };
 		943592C9293684A7009AF4C9 /* GameSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943592C8293684A7009AF4C9 /* GameSelectView.swift */; };
 		945D3F14293F9923004C0CEB /* scoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945D3F13293F9923004C0CEB /* scoreView.swift */; };
+		945D3F2A293F9D99004C0CEB /* QuiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945D3F29293F9D99004C0CEB /* QuiftUITests.swift */; };
+		945D3F2C293F9D99004C0CEB /* QuiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945D3F2B293F9D99004C0CEB /* QuiftUITestsLaunchTests.swift */; };
+		945D3F35293FA473004C0CEB /* QuizManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945D3F34293FA473004C0CEB /* QuizManagerTests.swift */; };
 		94D17931293F626300D0730A /* ScoreShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D17930293F626300D0730A /* ScoreShape.swift */; };
 		94EFA266293A561A001D10AA /* categoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EFA265293A561A001D10AA /* categoryView.swift */; };
 		94EFA268293A5D97001D10AA /* difficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EFA267293A5D97001D10AA /* difficultyView.swift */; };
@@ -30,6 +33,23 @@
 		F866D11129291F80005299F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F866D11029291F80005299F1 /* Preview Assets.xcassets */; };
 		F866D11E29293AAC005299F1 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F866D11D29293AAC005299F1 /* QuestionData.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		945D3F1E293F9D83004C0CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F866D0FE29291F7F005299F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F866D10529291F7F005299F1;
+			remoteInfo = Quift;
+		};
+		945D3F2D293F9D99004C0CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F866D0FE29291F7F005299F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F866D10529291F7F005299F1;
+			remoteInfo = Quift;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		94098E71293E1411006B56F1 /* headerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerView.swift; sourceTree = "<group>"; };
@@ -45,6 +65,11 @@
 		942B90E62934E8CD00C5F75F /* QuizManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizManager.swift; sourceTree = "<group>"; };
 		943592C8293684A7009AF4C9 /* GameSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectView.swift; sourceTree = "<group>"; };
 		945D3F13293F9923004C0CEB /* scoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreView.swift; sourceTree = "<group>"; };
+		945D3F1A293F9D83004C0CEB /* QuiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		945D3F27293F9D99004C0CEB /* QuiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		945D3F29293F9D99004C0CEB /* QuiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiftUITests.swift; sourceTree = "<group>"; };
+		945D3F2B293F9D99004C0CEB /* QuiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		945D3F34293FA473004C0CEB /* QuizManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizManagerTests.swift; sourceTree = "<group>"; };
 		94D17930293F626300D0730A /* ScoreShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreShape.swift; sourceTree = "<group>"; };
 		94EFA265293A561A001D10AA /* categoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryView.swift; sourceTree = "<group>"; };
 		94EFA267293A5D97001D10AA /* difficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = difficultyView.swift; sourceTree = "<group>"; };
@@ -58,6 +83,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		945D3F17293F9D83004C0CEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		945D3F24293F9D99004C0CEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F866D10329291F7F005299F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,6 +130,30 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		945D3F15293F9D36004C0CEB /* QuiftTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = QuiftTest;
+			sourceTree = "<group>";
+		};
+		945D3F1B293F9D83004C0CEB /* QuiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				945D3F34293FA473004C0CEB /* QuizManagerTests.swift */,
+			);
+			path = QuiftTests;
+			sourceTree = "<group>";
+		};
+		945D3F28293F9D99004C0CEB /* QuiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				945D3F29293F9D99004C0CEB /* QuiftUITests.swift */,
+				945D3F2B293F9D99004C0CEB /* QuiftUITestsLaunchTests.swift */,
+			);
+			path = QuiftUITests;
+			sourceTree = "<group>";
+		};
 		94EFA264293A5604001D10AA /* SubView */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				F866D10829291F7F005299F1 /* Quift */,
+				945D3F1B293F9D83004C0CEB /* QuiftTests */,
+				945D3F28293F9D99004C0CEB /* QuiftUITests */,
 				F866D10729291F7F005299F1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				F866D10629291F7F005299F1 /* Quift.app */,
+				945D3F1A293F9D83004C0CEB /* QuiftTests.xctest */,
+				945D3F27293F9D99004C0CEB /* QuiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,15 +190,16 @@
 		F866D10829291F7F005299F1 /* Quift */ = {
 			isa = PBXGroup;
 			children = (
+				945D3F15293F9D36004C0CEB /* QuiftTest */,
 				F866D10929291F7F005299F1 /* QuiftApp.swift */,
 				942B90D82934D23A00C5F75F /* Extensions.swift */,
+				942B90E62934E8CD00C5F75F /* QuizManager.swift */,
 				942B90D72934C7F600C5F75F /* View */,
 				942B90D32934C74600C5F75F /* Components */,
 				F88CF3F3292B94020095E19D /* Model */,
 				F866D11C29293A80005299F1 /* Data */,
 				F866D10D29291F80005299F1 /* Assets.xcassets */,
 				F866D10F29291F80005299F1 /* Preview Content */,
-				942B90E62934E8CD00C5F75F /* QuizManager.swift */,
 			);
 			path = Quift;
 			sourceTree = "<group>";
@@ -164,6 +232,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		945D3F19293F9D83004C0CEB /* QuiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 945D3F20293F9D83004C0CEB /* Build configuration list for PBXNativeTarget "QuiftTests" */;
+			buildPhases = (
+				945D3F16293F9D83004C0CEB /* Sources */,
+				945D3F17293F9D83004C0CEB /* Frameworks */,
+				945D3F18293F9D83004C0CEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				945D3F1F293F9D83004C0CEB /* PBXTargetDependency */,
+			);
+			name = QuiftTests;
+			productName = QuiftTests;
+			productReference = 945D3F1A293F9D83004C0CEB /* QuiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		945D3F26293F9D99004C0CEB /* QuiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 945D3F2F293F9D99004C0CEB /* Build configuration list for PBXNativeTarget "QuiftUITests" */;
+			buildPhases = (
+				945D3F23293F9D99004C0CEB /* Sources */,
+				945D3F24293F9D99004C0CEB /* Frameworks */,
+				945D3F25293F9D99004C0CEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				945D3F2E293F9D99004C0CEB /* PBXTargetDependency */,
+			);
+			name = QuiftUITests;
+			productName = QuiftUITests;
+			productReference = 945D3F27293F9D99004C0CEB /* QuiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F866D10529291F7F005299F1 /* Quift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F866D11429291F80005299F1 /* Build configuration list for PBXNativeTarget "Quift" */;
@@ -191,6 +295,14 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					945D3F19293F9D83004C0CEB = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = F866D10529291F7F005299F1;
+					};
+					945D3F26293F9D99004C0CEB = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = F866D10529291F7F005299F1;
+					};
 					F866D10529291F7F005299F1 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -211,11 +323,27 @@
 			projectRoot = "";
 			targets = (
 				F866D10529291F7F005299F1 /* Quift */,
+				945D3F19293F9D83004C0CEB /* QuiftTests */,
+				945D3F26293F9D99004C0CEB /* QuiftUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		945D3F18293F9D83004C0CEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		945D3F25293F9D99004C0CEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F866D10429291F7F005299F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,6 +356,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		945D3F16293F9D83004C0CEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				945D3F35293FA473004C0CEB /* QuizManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		945D3F23293F9D99004C0CEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				945D3F2C293F9D99004C0CEB /* QuiftUITestsLaunchTests.swift in Sources */,
+				945D3F2A293F9D99004C0CEB /* QuiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F866D10229291F7F005299F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,7 +402,94 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		945D3F1F293F9D83004C0CEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F866D10529291F7F005299F1 /* Quift */;
+			targetProxy = 945D3F1E293F9D83004C0CEB /* PBXContainerItemProxy */;
+		};
+		945D3F2E293F9D99004C0CEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F866D10529291F7F005299F1 /* Quift */;
+			targetProxy = 945D3F2D293F9D99004C0CEB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		945D3F21293F9D83004C0CEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Winter.QuiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Quift";
+			};
+			name = Debug;
+		};
+		945D3F22293F9D83004C0CEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Winter.QuiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quift.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Quift";
+			};
+			name = Release;
+		};
+		945D3F30293F9D99004C0CEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Winter.QuiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Quift;
+			};
+			name = Debug;
+		};
+		945D3F31293F9D99004C0CEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Winter.QuiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Quift;
+			};
+			name = Release;
+		};
 		F866D11229291F80005299F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -433,6 +665,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		945D3F20293F9D83004C0CEB /* Build configuration list for PBXNativeTarget "QuiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				945D3F21293F9D83004C0CEB /* Debug */,
+				945D3F22293F9D83004C0CEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		945D3F2F293F9D99004C0CEB /* Build configuration list for PBXNativeTarget "QuiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				945D3F30293F9D99004C0CEB /* Debug */,
+				945D3F31293F9D99004C0CEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F866D10129291F7F005299F1 /* Build configuration list for PBXProject "Quift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

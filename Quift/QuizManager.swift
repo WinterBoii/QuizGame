@@ -10,7 +10,6 @@ import SwiftUI
 
 class QuizManager: ObservableObject {
     @Published var trivia: [QuizData.Result] = []
-    
     @Published private(set) var length = 0
     @Published private(set) var index = 0
     @Published private(set) var reachedEnd = false
@@ -51,16 +50,12 @@ class QuizManager: ObservableObject {
             //we need to deploy it to the main thread
             DispatchQueue.main.async {
                 //everytime we fetch data we reset our variables, to referesh
-                self.index = 0
-                self.score = 0
-                self.progress = 0.00
-                self.reachedEnd = false
-                self.timer = 0.0
+                self.resetQuiz()
                 
                 self.trivia = decodedData.results
                 self.length = self.trivia.count
                 self.setQuestion()
-                print("hey")
+                //print("hey")
             }
         } catch {
             print("Error fetching trivia: \(error)")
@@ -71,6 +66,12 @@ class QuizManager: ObservableObject {
         self.selectedDifficulty = nil
         self.selectedCategory = nil
         self.nrOfQuestionsFromUser = ""
+        
+        self.index = 0
+        self.score = 0
+        self.progress = 0.00
+        self.reachedEnd = false
+        self.timer = 0.0
     }
     
     func createURL(querys:[String:String]) -> String{
@@ -83,18 +84,22 @@ class QuizManager: ObservableObject {
         components.queryItems = querys.map{
             URLQueryItem(name: $0.key, value: $0.value)
         }
-        print(components.string!)
+        //print(components.string!)
         return components.string!
     }
     
-    func getOptions(id: String, level: String, nrOfQuestions: String) {
+    func setOptions(id: String, level: String, nrOfQuestions: String) {
         if !id.isEmpty {
             options["category"] = String(id)
         }
         if !level.isEmpty {
             options["difficulty"] = level
         }
-        options["amount"] = nrOfQuestions
+        if !nrOfQuestions.isEmpty {
+            options["amount"] = nrOfQuestions
+        } else {
+            options["amount"] = String(5)
+        }
     }
     
     func goToNextQuestion() {
@@ -112,7 +117,6 @@ class QuizManager: ObservableObject {
         progress = CGFloat(Double(index + 1) / Double(length) * 350)
         
         //print(progress)
-        
         if index < length {
             let currentQuestion = trivia[index]
             question = currentQuestion.formattedQuestion

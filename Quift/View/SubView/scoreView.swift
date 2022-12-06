@@ -19,7 +19,7 @@ struct scoreView: View {
         Text( (quizManager.score >= quizManager.length*70/100) ? "👍" : "👎")
             .font(.system(size: 100))
         if quizManager.score >= quizManager.length*70/100 {
-            Text("Congratulations, you have done a great job!")
+            Text("Congratulations, you did a great job!")
         } else{
             Text("Nice try, Better luck next time!")
         }

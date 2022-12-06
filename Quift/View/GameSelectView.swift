@@ -26,7 +26,7 @@ struct GameSelectView: View {
                 NavigationLink {
                     TriviaView()
                         .task {
-                            quizManager.getOptions(id: quizManager.getCodeByCategory(category: quizManager.selectedCategory ?? ""), level: quizManager.selectedDifficulty ?? "", nrOfQuestions: String(quizManager.nrOfQuestionsFromUser.isEmpty ? String(5) : quizManager.nrOfQuestionsFromUser))
+                            quizManager.setOptions(id: quizManager.getCodeByCategory(category: quizManager.selectedCategory ?? ""), level: quizManager.selectedDifficulty ?? "", nrOfQuestions: String(quizManager.nrOfQuestionsFromUser.isEmpty ? String(5) : quizManager.nrOfQuestionsFromUser))
                             await quizManager.fetchQuiz()
                         }
                 } label: {
