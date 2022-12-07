@@ -22,9 +22,8 @@ struct GameSelectView: View {
                     .background(isDark ? Color("dark-card") : .white)
                     .cornerRadius(25)
                     .padding()
-                
                 NavigationLink {
-                    TriviaView()
+                   TimerView()
                         .task {
                             quizManager.setOptions(id: quizManager.getCodeByCategory(category: quizManager.selectedCategory ?? ""), level: quizManager.selectedDifficulty ?? "", nrOfQuestions: String(quizManager.nrOfQuestionsFromUser.isEmpty ? String(5) : quizManager.nrOfQuestionsFromUser))
                             await quizManager.fetchQuiz()
@@ -33,6 +32,7 @@ struct GameSelectView: View {
                     PrimaryButton(text: "Start Quiz")
                         .padding(.vertical)
                         .onSubmit {
+                            
                         }
                 }
                 Spacer()
