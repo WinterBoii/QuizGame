@@ -11,7 +11,7 @@ struct TimerView: View {
     @StateObject var quizManager = QuizManager.shared
     @State var currentDate = Date.now
     @AppStorage("darkmode") var isDark: Bool = false
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 0.7, on: .main, in: .common).autoconnect()
     @State var countDown = 4
     @State var finishedText: String? = nil
     
