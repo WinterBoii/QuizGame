@@ -19,9 +19,8 @@
 		942B90E52934E51400C5F75F /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942B90E42934E51400C5F75F /* Quiz.swift */; };
 		942B90E72934E8CD00C5F75F /* QuizManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942B90E62934E8CD00C5F75F /* QuizManager.swift */; };
 		943592C9293684A7009AF4C9 /* GameSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943592C8293684A7009AF4C9 /* GameSelectView.swift */; };
+		9442177229409604004AD55B /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9442177129409604004AD55B /* TimerView.swift */; };
 		945D3F14293F9923004C0CEB /* scoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945D3F13293F9923004C0CEB /* scoreView.swift */; };
-		945D3F2A293F9D99004C0CEB /* QuiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945D3F29293F9D99004C0CEB /* QuiftUITests.swift */; };
-		945D3F2C293F9D99004C0CEB /* QuiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945D3F2B293F9D99004C0CEB /* QuiftUITestsLaunchTests.swift */; };
 		945D3F35293FA473004C0CEB /* QuizManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945D3F34293FA473004C0CEB /* QuizManagerTests.swift */; };
 		94D17931293F626300D0730A /* ScoreShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D17930293F626300D0730A /* ScoreShape.swift */; };
 		94EFA266293A561A001D10AA /* categoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EFA265293A561A001D10AA /* categoryView.swift */; };
@@ -64,11 +63,10 @@
 		942B90E42934E51400C5F75F /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		942B90E62934E8CD00C5F75F /* QuizManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizManager.swift; sourceTree = "<group>"; };
 		943592C8293684A7009AF4C9 /* GameSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectView.swift; sourceTree = "<group>"; };
+		9442177129409604004AD55B /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		945D3F13293F9923004C0CEB /* scoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreView.swift; sourceTree = "<group>"; };
 		945D3F1A293F9D83004C0CEB /* QuiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		945D3F27293F9D99004C0CEB /* QuiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		945D3F29293F9D99004C0CEB /* QuiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiftUITests.swift; sourceTree = "<group>"; };
-		945D3F2B293F9D99004C0CEB /* QuiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		945D3F34293FA473004C0CEB /* QuizManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizManagerTests.swift; sourceTree = "<group>"; };
 		94D17930293F626300D0730A /* ScoreShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreShape.swift; sourceTree = "<group>"; };
 		94EFA265293A561A001D10AA /* categoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryView.swift; sourceTree = "<group>"; };
@@ -126,6 +124,7 @@
 				942B90DA2934D2E200C5F75F /* QuestionView.swift */,
 				942B90E22934E3E400C5F75F /* TriviaView.swift */,
 				943592C8293684A7009AF4C9 /* GameSelectView.swift */,
+				9442177129409604004AD55B /* TimerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,25 +132,9 @@
 		945D3F15293F9D36004C0CEB /* QuiftTest */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = QuiftTest;
-			sourceTree = "<group>";
-		};
-		945D3F1B293F9D83004C0CEB /* QuiftTests */ = {
-			isa = PBXGroup;
-			children = (
 				945D3F34293FA473004C0CEB /* QuizManagerTests.swift */,
 			);
-			path = QuiftTests;
-			sourceTree = "<group>";
-		};
-		945D3F28293F9D99004C0CEB /* QuiftUITests */ = {
-			isa = PBXGroup;
-			children = (
-				945D3F29293F9D99004C0CEB /* QuiftUITests.swift */,
-				945D3F2B293F9D99004C0CEB /* QuiftUITestsLaunchTests.swift */,
-			);
-			path = QuiftUITests;
+			path = QuiftTest;
 			sourceTree = "<group>";
 		};
 		94EFA264293A5604001D10AA /* SubView */ = {
@@ -171,8 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				F866D10829291F7F005299F1 /* Quift */,
-				945D3F1B293F9D83004C0CEB /* QuiftTests */,
-				945D3F28293F9D99004C0CEB /* QuiftUITests */,
 				F866D10729291F7F005299F1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -368,8 +349,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				945D3F2C293F9D99004C0CEB /* QuiftUITestsLaunchTests.swift in Sources */,
-				945D3F2A293F9D99004C0CEB /* QuiftUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9442177229409604004AD55B /* TimerView.swift in Sources */,
 				F866D10C29291F7F005299F1 /* ContentView.swift in Sources */,
 				942B90D92934D23A00C5F75F /* Extensions.swift in Sources */,
 				942B90E52934E51400C5F75F /* Quiz.swift in Sources */,

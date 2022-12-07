@@ -10,6 +10,7 @@ import SwiftUI
 
 class QuizManager: ObservableObject {
     @Published var trivia: [QuizData.Result] = []
+    @Published var isLoading = false
     @Published private(set) var length = 0
     @Published private(set) var index = 0
     @Published private(set) var reachedEnd = false
@@ -33,6 +34,7 @@ class QuizManager: ObservableObject {
     public static var shared = QuizManager()
     
     func fetchQuiz() async {
+        self.isLoading = true
         guard let url = URL(string: createURL(querys: options)) else { fatalError("Missing url") }
         
         let urlRequest = URLRequest(url: url)
@@ -55,6 +57,7 @@ class QuizManager: ObservableObject {
                 self.trivia = decodedData.results
                 self.length = self.trivia.count
                 self.setQuestion()
+                self.isLoading = false
                 //print("hey")
             }
         } catch {
